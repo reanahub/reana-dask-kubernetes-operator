@@ -21,7 +21,6 @@ cryptography==44.0.3      # via sqlalchemy-utils
 fqdn==1.5.1               # via jsonschema
 fs==2.4.16                # via reana-commons
 gherkin-official==32.0.0  # via reana-commons
-greenlet==3.2.1           # via sqlalchemy
 idna==3.10                # via jsonschema, requests
 importlib-resources==6.5.2  # via swagger-spec-validator
 isoduration==20.11.0      # via jsonschema

@@ -32,8 +32,8 @@ classifiers = [
 ]
 requires-python = ">=3.8"
 dependencies = [
-    "reana-commons==0.95.0a9",
-    "reana-db==0.95.0a5"
+    "reana-commons>=0.95.0a9,<0.96.0",
+    "reana-db>=0.95.0a5,<0.96.0"
 ]
 
 [project.optional-dependencies]
