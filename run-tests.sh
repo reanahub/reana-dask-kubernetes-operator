@@ -10,7 +10,7 @@ set -o errexit
 set -o nounset
 
 docker_build() {
-    docker build -t docker.io/reanahub/reana-workflow-engine-serial .
+    docker build -t docker.io/reanahub/reana-dask-kubernetes-operator .
 }
 
 format_black() {
@@ -84,7 +84,7 @@ lint_markdownlint() {
 }
 
 lint_pydocstyle() {
-    pydocstyle reana_workflow_engine_serial
+    pydocstyle reana_dask_kubernetes_operator
 }
 
 lint_shellcheck() {
