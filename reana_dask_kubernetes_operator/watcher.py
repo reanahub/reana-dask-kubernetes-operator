@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of REANA.
-# Copyright (C) 2025 CERN.
+# Copyright (C) 2025, 2026 CERN.
 #
 # REANA is free software; you can redistribute it and/or modify it
 # under the terms of the MIT License; see LICENSE file for more details.
@@ -34,9 +34,14 @@ if not REANA_OPENSEARCH_ENABLED:  # noqa: C901
 
         try:
             logger.info(f"Fetching logs for pod: {name} in namespace: {namespace}")
-            pod_logs = current_k8s_corev1_api_client.read_namespaced_pod_log(
-                name=name, namespace=namespace
+            # Read raw response body (``_preload_content=False``) and decode
+            # it ourselves: kubernetes 36.x applies ``str()`` to ``bytes``
+            # payloads in its ``response_type='str'`` deserialiser,
+            # producing ``b'...'`` repr strings instead of UTF-8 text.
+            pod_log_response = current_k8s_corev1_api_client.read_namespaced_pod_log(
+                name=name, namespace=namespace, _preload_content=False
             )
+            pod_logs = pod_log_response.data.decode("utf-8", errors="replace")
         except Exception as e:
             logger.error(f"Failed to fetch logs from pod {name}: {e}")
 
