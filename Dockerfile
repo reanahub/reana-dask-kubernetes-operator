@@ -4,7 +4,7 @@
 # REANA is free software; you can redistribute it and/or modify it
 # under the terms of the MIT License; see LICENSE file for more details.
 
-FROM ghcr.io/dask/dask-kubernetes-operator:2025.4.3
+FROM ghcr.io/dask/dask-kubernetes-operator:2026.3.0
 
 # Configure shell options
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

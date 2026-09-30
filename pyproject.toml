@@ -11,35 +11,31 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "reana-dask-kubernetes-operator"
 dynamic = ["version"]
-authors = [
-    { name = "REANA", email = "info@reana.io" }
-]
+authors = [{ name = "REANA", email = "info@reana.io" }]
 description = "REANA-Dask-Kubernetes-Operator"
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 readme = "README.md"
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Environment :: Web Environment",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python",
-    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+  "Development Status :: 3 - Alpha",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 requires-python = ">=3.8"
 dependencies = [
-    "reana-commons>=0.95.0a20,<0.96.0",
-    "reana-db>=0.95.0a10,<0.96.0"
+  "reana-commons>=0.95.0a20,<0.96.0",
+  "reana-db>=0.95.0a10,<0.96.0",
 ]
 
 [project.optional-dependencies]
-test = [
-    "pytest-reana>=0.95.0a4,<0.96.0",
-]
+test = ["pytest-reana>=0.95.0a4,<0.96.0"]
 
 [project.urls]
 Homepage = "https://github.com/reanahub/reana-dask-kubernetes-operator"
@@ -51,4 +47,4 @@ reana_dask_kubernetes_operator = "reana_dask_kubernetes_operator.watcher"
 include = ["reana_dask_kubernetes_operator"]
 
 [tool.setuptools.dynamic]
-version = {attr = "reana_dask_kubernetes_operator.version.__version__"}
+version = { attr = "reana_dask_kubernetes_operator.version.__version__" }
