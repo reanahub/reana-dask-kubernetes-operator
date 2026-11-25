@@ -37,7 +37,7 @@ RUN if test -e modules/reana-commons; then \
       fi \
     fi
 
-RUN pip install --no-cache-dir --force-reinstall msgpack==1.1.0 && pip check
+RUN pip install --no-cache-dir --force-reinstall msgpack==1.2.4 && pip check
 
 USER 1000
 
